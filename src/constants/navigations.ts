@@ -13,22 +13,22 @@ export const NAVIGATION_ITEMS = [
     icon: LayoutDashboard,
   },
   {
-    label: "Doctors",
+    label: "Bác sĩ",
     href: "/manager/doctors",
     icon: Stethoscope,
   },
   {
-    label: "Diseases",
+    label: "Bệnh lý",
     href: "/manager/diseases",
     icon: Microscope,
   },
   {
-    label: "Antibiotics",
+    label: "Kháng sinh",
     href: "/manager/antibiotics",
     icon: Syringe,
   },
   {
-    label: "Reports",
+    label: "Báo cáo",
     href: "/manager/reports",
     icon: FileBarChart2,
   },

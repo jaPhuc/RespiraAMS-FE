@@ -215,8 +215,8 @@ export function AntibioticFormDialog({
         <DialogHeader>
           <DialogTitle>
             {isEdit
-              ? "Update Antibiotic"
-              : "Create Antibiotic"}
+              ? "Chỉnh Sửa Kháng Sinh"
+              : "Thêm Kháng Sinh Mới"}
           </DialogTitle>
         </DialogHeader>
 
@@ -231,14 +231,14 @@ export function AntibioticFormDialog({
           {/* Name */}
           <div className="space-y-2">
             <label className="text-sm font-medium">
-              Name
+              Tên Kháng Sinh<span className="text-red-500">*</span>
             </label>
 
             <Input
               {...register(
                 "name"
               )}
-              placeholder="Enter antibiotic name"
+              placeholder="Nhập tên kháng sinh"
             />
 
             {errors.name && (
@@ -254,7 +254,7 @@ export function AntibioticFormDialog({
           {/* Spectrum */}
           <div className="space-y-2">
             <label className="text-sm font-medium">
-              Spectrum
+              Phổ kháng sinh<span className="text-red-500">*</span>
             </label>
 
             <Select
@@ -271,7 +271,7 @@ export function AntibioticFormDialog({
               }
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select spectrum" />
+                <SelectValue placeholder="Chọn phổ kháng sinh" />
               </SelectTrigger>
 
               <SelectContent>
@@ -310,7 +310,7 @@ export function AntibioticFormDialog({
           {/* Category */}
           <div className="space-y-2">
             <label className="text-sm font-medium">
-              Category
+              Phân Loại AWaRe<span className="text-red-500">*</span>
             </label>
 
             <Select
@@ -320,7 +320,7 @@ export function AntibioticFormDialog({
               }
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select category" />
+                <SelectValue placeholder="Chọn phân loại" />
               </SelectTrigger>
 
               <SelectContent>
@@ -350,8 +350,8 @@ export function AntibioticFormDialog({
           {/* Routes & Dosages */}
           <div className="space-y-4">
             <label className="text-sm font-medium">
-              Routes &
-              Dosages
+              Đường Dùng &
+              Liều Dùng
             </label>
 
             {ROUTE_OPTIONS.map(
@@ -410,7 +410,7 @@ export function AntibioticFormDialog({
                             >
                               <Input
                                 value={dosage}
-                                placeholder="Enter dosage"
+                                placeholder="Nhập liều dùng"
                                 onChange={(
                                   e
                                 ) => {
@@ -494,7 +494,7 @@ export function AntibioticFormDialog({
                         >
                           <Plus className="h-4 w-4" />
 
-                          Add Dosage
+                          Thêm Liều Dùng
                         </Button>
                       </div>
                     )}

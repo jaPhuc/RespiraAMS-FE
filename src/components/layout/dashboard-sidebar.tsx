@@ -46,7 +46,7 @@ export function DashboardSidebar() {
         <div className="mb-10 flex items-center justify-between px-6">
           <div>
             <h1 className="text-2xl font-bold text-sky-300">
-              MedAdmin Pro
+              RespiraAMS
             </h1>
 
             <p className="text-sm text-slate-300/70">

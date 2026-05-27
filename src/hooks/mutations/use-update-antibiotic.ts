@@ -17,7 +17,7 @@ export function useUpdateAntibiotic() {
 
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["Antibiotics"],
+        queryKey: ["antibiotics"],
       })
     },
   })

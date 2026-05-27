@@ -10,7 +10,7 @@ export function useDeleteAntibiotic() {
 
     onSuccess: () => {
       queryClient.invalidateQueries({
-        queryKey: ["Antibiotics"],
+        queryKey: ["antibiotics"],
       })
     },
   })

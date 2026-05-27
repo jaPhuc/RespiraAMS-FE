@@ -41,14 +41,13 @@ export function DeleteAntibioticDialog({
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-            Delete Antibiotic
+            Xóa Kháng Sinh
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-4">
           <p>
-            Are you sure you want to
-            delete this antibiotic?
+            Bạn có chắc chắn muốn xóa kháng sinh này không? Hành động này không thể hoàn tác.
           </p>
 
           <Button
@@ -56,7 +55,7 @@ export function DeleteAntibioticDialog({
             className="w-full"
             onClick={handleDelete}
           >
-            Delete
+            Xóa
           </Button>
         </div>
       </DialogContent>

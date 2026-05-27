@@ -92,19 +92,19 @@ export default function AntibioticsPage() {
       {/* Hero */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">
-            Antibiotic Registry
+          <h1 className="text-3xl font-bold tracking-tight text-primary mb-2" >
+            Danh mục Kháng sinh
           </h1>
 
           <p className="text-muted-foreground">
-            Manage hospital antibiotic inventory
+            Hướng dẫn sử dụng và tra cứu phổ kháng khuẩn lâm sàng.
           </p>
         </div>
 
-        <Button className="gap-2" onClick={handleCreate}>
+        <Button className="gap-2 flex items-center px-5 py-2.5" onClick={handleCreate}>
           <Plus className="h-4 w-4" />
 
-          Add New Antibiotic
+          Thêm kháng sinh
         </Button>
       </div>
 
@@ -114,9 +114,13 @@ export default function AntibioticsPage() {
       {/* Table */}
       <section className="overflow-hidden rounded-xl border bg-white shadow-sm">
         <div className="flex items-center justify-between border-b px-6 py-4">
-          <h3 className="text-lg font-semibold">
-            Antibiotic Inventory
+          <h3 className="text-lg font-semibold text-primary">
+            Danh sách thuốc hiện có
           </h3>
+          {/* <span className="bg-blue-50 text-primary px-3 py-1 rounded-full text-[13px] font-medium border border-blue-100 flex items-left gap-1">
+            {data.items.length} Thuốc đang quản lý
+          </span> */}
+
 
           <div className="flex gap-2">
             <Button
