@@ -1,30 +1,30 @@
 export const CATEGORY_OPTIONS = [
   {
     label: "Access",
-    value: "Access",
+    value: "access",
   },
   {
     label: "Watch",
-    value: "Watch",
+    value: "watch",
   },
   {
     label: "AccessWatch",
-    value: "AccessWatch",
+    value: "accessWatch",
   },
   {
     label: "Reserve",
-    value: "Reserve",
+    value: "reserve",
   },
 ]
 
 export const ROUTE_OPTIONS = [
   {
     label: "Oral",
-    value: "Oral",
+    value: "oral",
   },
   {
     label: "Intravenous",
-    value: "Intravenous",
+    value: "intravenous",
   },
 ]
 

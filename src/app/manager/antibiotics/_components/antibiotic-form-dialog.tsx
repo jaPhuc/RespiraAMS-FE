@@ -45,23 +45,22 @@ import {
   mapFormToPayload,
 } from "@/src/app/mappers/antibiotic.mapper"
 
-import { useAntibioticSpectra } from "@/src/hooks/queries/use-antibiotic-spectra"
+import { useAntibioticSpectra } from "@/src/hooks/use-antibiotic-spectra"
 
-import { useCreateAntibiotic } from "@/src/hooks/mutations/use-create-antibiotic"
-
-import { useUpdateAntibiotic } from "@/src/hooks/mutations/use-update-antibiotic"
+import { useUpdateAntibiotic, useCreateAntibiotic } from "@/src/hooks/use-antibiotic"
 
 import {
   Plus,
   Trash2,
 } from "lucide-react"
+import { Antibiotic, AntibioticSpectrum } from "@/src/types/antibiotic.type"
 
 interface Props {
   open: boolean
   onOpenChange: (
     value: boolean
   ) => void
-  initialData?: any
+  initialData?: Antibiotic | null
 }
 
 export function AntibioticFormDialog({
@@ -277,7 +276,7 @@ export function AntibioticFormDialog({
               <SelectContent>
                 {spectrums?.items?.map(
                   (
-                    item: any
+                    item: AntibioticSpectrum
                   ) => (
                     <SelectItem
                       key={
@@ -350,8 +349,7 @@ export function AntibioticFormDialog({
           {/* Routes & Dosages */}
           <div className="space-y-4">
             <label className="text-sm font-medium">
-              Đường Dùng &
-              Liều Dùng
+              Đường Dùng & Liều Dùng<span className="text-red-500">*</span>
             </label>
 
             {ROUTE_OPTIONS.map(
@@ -479,9 +477,7 @@ export function AntibioticFormDialog({
                             setValue(
                               "dosages",
                               {
-                                ...watch(
-                                  "dosages"
-                                ),
+                                ...dosagesState,
 
                                 [route.value]:
                                   [

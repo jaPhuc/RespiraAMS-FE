@@ -15,7 +15,7 @@ import { StatisticsCards } from "./_components/statistic-cards"
 import { AntibioticTable } from "./_components/antibiotic-table"
 import { PaginationSection } from "./_components/pagination"
 
-import { useAntibiotics } from "@/src/hooks/queries/use-antibiotics"
+import { useAntibiotics } from "@/src/hooks/use-antibiotics"
 import { AntibioticFormDialog } from "./_components/antibiotic-form-dialog"
 import { DeleteAntibioticDialog } from "./_components/delete-antibiotic-dialog"
 
@@ -50,13 +50,13 @@ export default function AntibioticsPage() {
     setOpenForm(true)
   }
 
-  function handleEdit(item: any) {
+  function handleEdit(item: Antibiotic) {
     setSelectedAntibiotic(item)
 
     setOpenForm(true)
   }
 
-  function handleDelete(item: any) {
+  function handleDelete(item: Antibiotic) {
     setSelectedAntibiotic(item)
 
     setOpenDelete(true)

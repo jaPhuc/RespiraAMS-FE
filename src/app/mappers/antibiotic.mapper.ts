@@ -1,42 +1,30 @@
-import { Antibiotic } from "@/src/types/antibiotic.type"
+import {
+  Antibiotic,
+  AntibioticPayload,
+} from "@/src/types/antibiotic.type"
 
-import { AntibioticFormValues } from "@/src/schemas/antibiotic.schema"
-import { ROUTE_OPTIONS } from "@/src/constants/antibiotic"
-
-const ROUTE_VALUE_MAP: Record<
-  number,
-  string
-> = {
-  1: "Oral",
-  2: "Intravenous",
-}
+import {
+  AntibioticFormValues,
+} from "@/src/schemas/antibiotic.schema"
 
 export function mapAntibioticToForm(
   antibiotic: Antibiotic
-) {
+): AntibioticFormValues {
   return {
     name: antibiotic.name,
 
     antibioticSpectrumId:
-      antibiotic.antibioticSpectrum
+      antibiotic
+        .antibioticSpectrum
         ?.id || "",
 
     category:
-      antibiotic.category || "",
+    antibiotic.category,
 
     routeOfAdministrations:
       antibiotic.routeOfAdministrations.map(
-        (route) => {
-          if (
-            typeof route === "string"
-          ) {
-            return route
-          }
-
-          return (
-            ROUTE_VALUE_MAP[route] || ""
-          )
-        }
+        (route) =>
+          typeof route === "string" ? route : ""
       ),
 
     dosages:
@@ -46,18 +34,20 @@ export function mapAntibioticToForm(
 
 export function mapFormToPayload(
   values: AntibioticFormValues
-) {
+): AntibioticPayload {
   return {
     name: values.name,
 
     antibioticSpectrumId:
     values.antibioticSpectrumId,
 
-    category: values.category,
+    category:
+    values.category,
 
     routeOfAdministrations:
     values.routeOfAdministrations,
 
-    dosages: values.dosages,
+    dosages:
+    values.dosages,
   }
 }

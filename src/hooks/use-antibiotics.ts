@@ -12,7 +12,7 @@ export function useAntibiotics({
   pageSize,
 }: UseAntibioticsProps) {
   return useQuery({
-    queryKey: ["antibiotics", page, pageSize],
+    queryKey: ["Antibiotics", page, pageSize],
     queryFn: () =>
       getAntibiotics({
         page,
