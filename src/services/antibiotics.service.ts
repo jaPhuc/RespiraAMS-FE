@@ -1,5 +1,6 @@
 import { api } from "@/src/lib/axios"
-import { AntibioticsResponse } from "@/src/types/antibiotic.type"
+import { PaginationResponse } from "@/src/types/common.type"
+import { Antibiotic } from "@/src/types/antibiotic.type"
 
 interface GetAntibioticsParams {
   page?: number
@@ -9,7 +10,7 @@ interface GetAntibioticsParams {
 export async function getAntibiotics({
   page = 1,
   pageSize = 10,
-}: GetAntibioticsParams): Promise<AntibioticsResponse> {
+}: GetAntibioticsParams): Promise<PaginationResponse<Antibiotic>> {
   const response = await api.get("/Antibiotics", {
     params: {
       page,
