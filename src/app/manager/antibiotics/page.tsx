@@ -82,7 +82,7 @@ export default function AntibioticsPage() {
   if (isError || !data) {
     return (
       <div>
-        Something went wrong
+        Không thể tải dữ liệu. Vui lòng thử lại sau.
       </div>
     )
   }

@@ -32,14 +32,14 @@ export function AntibioticTable({
   }: Props) {
 
     const renderCategoryBadge = (category: string) => {
-    switch (category) {
-      case "Access":
+    switch (category.toLowerCase()) {
+      case "access":
         return <span className="bg-green-100 text-green-800 border border-green-200 px-3 py-1.5 rounded-full text-[13px] font-semibold">Access</span>;
-      case "Watch":
+      case "watch":
         return <span className="bg-yellow-100 text-yellow-800 border border-yellow-200 px-3 py-1.5 rounded-full text-[13px] font-semibold">Watch</span>;
-      case "Reserve":
+      case "reserve":
         return <span className="bg-red-100 text-red-800 border border-red-200 px-3 py-1.5 rounded-full text-[13px] font-semibold">Reserve</span>;
-      case "AccessWatch":
+      case "accesswatch":
         return <span className="bg-blue-100 text-blue-800 border border-blue-200 px-3 py-1.5 rounded-full text-[13px] font-semibold">Access / Watch</span>;
       default:
         return <span className="bg-gray-100 text-gray-700 border border-gray-200 px-3 py-1.5 rounded-full text-[13px] font-semibold">{category}</span>;
@@ -81,7 +81,7 @@ export function AntibioticTable({
                   {item.routeOfAdministrations.map(
                     (route) => (
                       <div key={route}>
-                        <p className="font-medium">
+                        <p className="font-medium uppercase">
                           {route}
                         </p>
 
