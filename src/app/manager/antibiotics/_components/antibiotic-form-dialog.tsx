@@ -113,6 +113,14 @@ export function AntibioticFormDialog({
           initialData
         )
       )
+    } else {
+      reset({
+        name: "",
+        antibioticSpectrumId: "",
+        category: "",
+        routeOfAdministrations: [],
+        dosages: {},
+      })
     }
   }, [initialData, reset])
 
@@ -184,6 +192,7 @@ export function AntibioticFormDialog({
   async function onSubmit(
     values: AntibioticFormValues
   ) {
+    try {
     const payload =
       mapFormToPayload(values)
 
@@ -194,15 +203,19 @@ export function AntibioticFormDialog({
           payload,
         }
       )
+      // alert("Cập nhật thành công!");
     } else {
-      await createMutation.mutateAsync(
-        payload
-      )
+      await createMutation.mutateAsync(payload);
+      // alert("Thêm mới thành công!");
     }
 
     onOpenChange(false)
+    } catch (error: any) {
+      console.error("Error 400/500:", error);
+      const errorMsg = error.response?.data?.detail || error.response?.data?.title || "Có lỗi khi lưu dữ liệu!";
+      alert(`Lỗi: ${errorMsg}`);
+    }
   }
-
   return (
     <Dialog
       open={open}
@@ -349,7 +362,9 @@ export function AntibioticFormDialog({
           {/* Routes & Dosages */}
           <div className="space-y-4">
             <label className="text-sm font-medium">
-              Đường Dùng & Liều Dùng<span className="text-red-500">*</span>
+              Đường Dùng &
+              Liều Dùng
+              <span className="text-red-500">*</span>
             </label>
 
             {ROUTE_OPTIONS.map(
@@ -498,8 +513,13 @@ export function AntibioticFormDialog({
                 )
               }
             )}
+            {errors.routeOfAdministrations && (
+              <p className="text-sm text-red-500 font-medium">{errors.routeOfAdministrations.message}</p>
+            )}
+            {errors.dosages && (
+              <p className="text-sm text-red-500 font-medium">{errors.dosages.message}</p>
+            )}
           </div>
-
           <Button
             type="submit"
             className="w-full"
