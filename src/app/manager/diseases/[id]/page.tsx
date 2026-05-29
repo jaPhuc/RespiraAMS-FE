@@ -30,7 +30,6 @@ export default function DiseaseDetailPage() {
         
         <div className="bg-[#006591] rounded-2xl p-8 text-white shadow-md flex justify-between items-start relative overflow-hidden">
         
-            {/* Decorate background (Option cho đẹp) */}
             <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
             <Activity className="w-64 h-64 -mt-10 -mr-10" />
             </div>
@@ -41,7 +40,6 @@ export default function DiseaseDetailPage() {
                 {disease.description}
             </p>
             
-            {/* Badges Tiêu chuẩn */}
             <div className="flex gap-3">
                 <span className="bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm border border-white/30">
                 {disease.requiredIcuMainCriteria} TC ICU Chính
@@ -52,7 +50,6 @@ export default function DiseaseDetailPage() {
             </div>
             </div>
 
-            {/* Nút Edit */}
             <button 
             onClick={() => setOpenEdit(true)}
             className="z-10 bg-white text-[#006591] hover:bg-blue-50 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-colors shadow-sm"
@@ -62,10 +59,8 @@ export default function DiseaseDetailPage() {
         </div>
       </div>
 
-      {/* Grid 3 cột chi tiết */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
         
-        {/* Cột 1: Tiêu chuẩn ICU */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
           <div className="px-5 py-4 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
             <Activity className="h-5 w-5 text-amber-600" />
@@ -87,7 +82,6 @@ export default function DiseaseDetailPage() {
           </div>
         </div>
 
-        {/* Cột 2: Yếu tố nguy cơ */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
           <div className="px-5 py-4 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
             <ShieldAlert className="h-5 w-5 text-red-500" />
@@ -109,7 +103,6 @@ export default function DiseaseDetailPage() {
           </div>
         </div>
 
-        {/* Cột 3: Tác nhân gây bệnh */}
         <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
           <div className="px-5 py-4 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
             <Bug className="h-5 w-5 text-purple-600" />

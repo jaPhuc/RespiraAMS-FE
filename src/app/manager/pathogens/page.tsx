@@ -7,7 +7,7 @@ import { usePathogens } from "@/src/hooks/queries/use-pathogens"
 import { PathogenTable } from "./_components/pathogen-table"
 import { PathogenFormDialog } from "./_components/pathogen-form-dialog"
 import { DeletePathogenDialog } from "./_components/delete-pathogen-dialog"
-import { PaginationSection } from "../antibiotics/_components/pagination" // Tái sử dụng pagination
+import { PaginationSection } from "../antibiotics/_components/pagination"
 
 export default function PathogensPage() {
   const [page, setPage] = useState(1)

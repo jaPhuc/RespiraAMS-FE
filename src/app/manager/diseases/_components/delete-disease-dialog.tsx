@@ -23,12 +23,12 @@ export function DeleteDiseaseDialog({ open, onOpenChange, diseaseId, diseaseName
   const deleteMutation = useDeleteDisease()
 
   const handleDelete = async (e: React.MouseEvent) => {
-    e.preventDefault() // Chặn tắt popup liền để đợi API chạy xong
+    e.preventDefault()
     try {
       await deleteMutation.mutateAsync(diseaseId)
-      onOpenChange(false) // Xóa xong mới tắt popup
+      onOpenChange(false)
     } catch (error: any) {
-      alert("Ét ô ét, xóa thất bại: " + (error.response?.data?.detail || "Lỗi hệ thống"))
+      alert("Xóa thất bại: " + (error.response?.data?.detail || "Lỗi hệ thống"))
       onOpenChange(false)
     }
   }
