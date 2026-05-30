@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 
 import { createAntibiotic, deleteAntibiotic, updateAntibiotic } from "@/src/services/antibiotics.service"
+import { AntibioticPayload } from "@/src/types/antibiotic.type"
 
 export function useCreateAntibiotic() {
   const queryClient = useQueryClient()
@@ -25,7 +26,7 @@ export function useUpdateAntibiotic() {
                    payload,
                  }: {
       id: string
-      payload: any
+      payload: AntibioticPayload
     }) =>
       updateAntibiotic(id, payload),
 

@@ -1,6 +1,6 @@
 import { api } from "@/src/lib/axios"
 import { PaginationResponse } from "@/src/types/common.type"
-import { Antibiotic } from "@/src/types/antibiotic.type"
+import { Antibiotic, AntibioticPayload } from "@/src/types/antibiotic.type"
 
 interface GetAntibioticsParams {
   page?: number
