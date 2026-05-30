@@ -517,7 +517,9 @@ export function AntibioticFormDialog({
               <p className="text-sm text-red-500 font-medium">{errors.routeOfAdministrations.message}</p>
             )}
             {errors.dosages && (
-              <p className="text-sm text-red-500 font-medium">{errors.dosages.message}</p>
+              <p className="text-sm text-red-500 font-medium">
+                Dosages is invalid
+              </p>
             )}
           </div>
           <Button

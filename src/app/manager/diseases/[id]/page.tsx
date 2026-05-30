@@ -1,8 +1,7 @@
 "use client"
 import { useParams, useRouter } from "next/navigation"
 import { ArrowLeft, Activity, ShieldAlert, Bug, Edit } from "lucide-react"
-import { Button } from "@/src/components/ui/button"
-import { useDisease } from "@/src/hooks/queries/use-disease"
+import { useDisease } from "@/src/hooks/use-disease"
 import { DiseaseFormDialog } from "../_components/disease-form-dialog"
 import { useState } from "react"
 
@@ -19,7 +18,7 @@ export default function DiseaseDetailPage() {
   if (isError || !disease) return <div className="p-8 text-red-500 font-medium">Lỗi hoặc không tìm thấy bệnh lý!</div>
 
   return (
-    <main className="p-8 space-y-6 max-w-[1200px] mx-auto">
+    <main className="p-8 space-y-6 max-w-300 mx-auto">
       <div className="flex flex-col gap-4">
         <button 
           onClick={() => router.push('/manager/diseases')}
@@ -71,7 +70,7 @@ export default function DiseaseDetailPage() {
               <ul className="space-y-3">
                 {disease.icuHospitalizedCriteria.map((item) => (
                   <li key={item.id} className="text-sm text-gray-700 flex items-start gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
                     <span>{item.name}</span>
                   </li>
                 ))}
@@ -92,7 +91,7 @@ export default function DiseaseDetailPage() {
               <ul className="space-y-3">
                 {disease.resistanceRisks.map((item) => (
                   <li key={item.id} className="text-sm text-gray-700 flex items-start gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-400 mt-1.5 shrink-0"></span>
                     <span>{item.name}</span>
                   </li>
                 ))}

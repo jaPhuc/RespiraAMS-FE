@@ -4,7 +4,9 @@ import {
   Microscope,
   Syringe,
   FileBarChart2,
-  ClipboardPlus
+  ClipboardPlus,
+  Tablets,
+  ShieldPlus,
 } from "lucide-react"
 
 export const NAVIGATION_ITEMS = [
@@ -34,14 +36,24 @@ export const NAVIGATION_ITEMS = [
     icon: ClipboardPlus,
   },
   {
-    label: "Phác đồ điều trị",
-    href: "/manager/treatment-protocols",
-    icon: ClipboardPlus,
-  },
-  {
     label: "Kháng sinh",
     href: "/manager/antibiotics",
     icon: Syringe,
+  },
+  {
+    label: "Phổ kháng sinh",
+    href: "/manager/antibiotic-spectra",
+    icon: Tablets,
+  },
+  {
+    label: "Nguy cơ",
+    href: "/manager/resistance-risks",
+    icon: ShieldPlus,
+  },
+  {
+    label: "Phác đồ điều trị",
+    href: "/manager/treatment-protocols",
+    icon: ClipboardPlus,
   },
   {
     label: "Báo cáo",

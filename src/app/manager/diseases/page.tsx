@@ -2,11 +2,10 @@
 import { useState } from "react"
 import { Plus, Filter, Download } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
-import { StatisticsCards } from "./_components/statistic-cards"
+import { useDiseases } from "@/src/hooks/use-diseases"
 import { DiseaseTable } from "./_components/disease-table"
 import { DiseaseFormDialog } from "./_components/disease-form-dialog"
-import { PaginationSection } from "../antibiotics/_components/pagination"
+import { PaginationSection } from "@/src/components/layout/pagination"
 import { DeleteDiseaseDialog } from "./_components/delete-disease-dialog"
 
 export default function DiseasesPage() {
@@ -21,7 +20,7 @@ export default function DiseasesPage() {
   if (isError || !data) return <div className="p-8 text-red-500">Lỗi kết nối API!</div>
 
   return (
-    <main className="p-8 space-y-6 max-w-[1200px] mx-auto">
+    <main className="p-8 space-y-6 max-w-300 mx-auto">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-primary mb-2">Quản lý Bệnh lý</h1>

@@ -6,7 +6,8 @@ import {
   deleteAntibiotic,
   getAntibiotics,
 } from "@/src/services/antibiotics.service"
-import { Antibiotic, AntibioticPayload, PaginatedResponse } from "@/src/types/antibiotic.type"
+import { Antibiotic, AntibioticPayload } from "@/src/types/antibiotic.type"
+import { PaginationResponse } from "@/src/types/common.type"
 
 interface UseAntibioticsProps {
   page: number
@@ -18,10 +19,10 @@ export function useAntibiotics({
                                  pageSize,
                                }: UseAntibioticsProps) {
   return useQuery<
-    PaginatedResponse<Antibiotic>
+    PaginationResponse<Antibiotic>
   >({
     queryKey: [
-      "antibiotics",
+      "Antibiotics",
       page,
       pageSize,
     ],

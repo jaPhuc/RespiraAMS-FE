@@ -13,9 +13,9 @@ import { Button } from "@/src/components/ui/button"
 import { Antibiotic } from "@/src/types/antibiotic.type"
 import { StatisticsCards } from "./_components/statistic-cards"
 import { AntibioticTable } from "./_components/antibiotic-table"
-import { PaginationSection } from "./_components/pagination"
+import { PaginationSection } from "@/src/components/layout/pagination"
 
-import { useAntibiotics } from "@/src/hooks/use-antibiotics"
+import { useAntibiotics } from "@/src/hooks/use-antibiotic"
 import { AntibioticFormDialog } from "./_components/antibiotic-form-dialog"
 import { DeleteAntibioticDialog } from "./_components/delete-antibiotic-dialog"
 
@@ -120,7 +120,6 @@ export default function AntibioticsPage() {
           {/* <span className="bg-blue-50 text-primary px-3 py-1 rounded-full text-[13px] font-medium border border-blue-100 flex items-left gap-1">
             {data.items.length} Thuốc đang quản lý
           </span> */}
-
 
           <div className="flex gap-2">
             <Button

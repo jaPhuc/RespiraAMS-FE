@@ -21,12 +21,6 @@ export function DashboardHeader() {
       "
     >
       <div className="flex items-center gap-4">
-        <h2 className="hidden text-xl font-bold md:block">
-          Hospital Management
-        </h2>
-
-        <div className="hidden h-6 w-px bg-border md:block" />
-
         <div className="group relative hidden md:block">
           <Search
             className="

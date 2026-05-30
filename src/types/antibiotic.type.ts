@@ -22,17 +22,3 @@ export interface AntibioticPayload {
     string[]
   >
 }
-
-export interface PaginationMetadata {
-  hasNextPage: boolean
-  hasPreviousPage: boolean
-  totalItemCount: number
-  pageCount: number
-  currentPage: number
-  pageSize: number
-}
-
-export interface PaginatedResponse<T> {
-  metadata: PaginationMetadata
-  items: T[]
-}

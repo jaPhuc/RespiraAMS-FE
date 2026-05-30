@@ -29,7 +29,7 @@ export function DashboardSidebar() {
       <aside
         className={`
           fixed left-0 top-0 z-50
-          flex h-screen w-[280px] flex-col
+          flex h-screen w-70 flex-col
           border-r border-slate-700/20
           bg-[#0d2b3e]
           py-6
@@ -65,27 +65,6 @@ export function DashboardSidebar() {
         </div>
 
         <SidebarNav />
-
-        {/* Footer */}
-        <div className="mt-auto border-t border-slate-700/30 px-6 pt-6">
-          <Button className="w-full bg-sky-400 text-slate-900 hover:bg-sky-300">
-            Quick Report
-          </Button>
-
-          <div className="mt-6 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-slate-200" />
-
-            <div>
-              <p className="font-medium text-white">
-                Dr. Aris Thorne
-              </p>
-
-              <p className="text-xs text-slate-300/70">
-                System Admin
-              </p>
-            </div>
-          </div>
-        </div>
       </aside>
 
       {/* Mobile Trigger */}

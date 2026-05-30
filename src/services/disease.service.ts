@@ -1,4 +1,3 @@
-// src/services/disease.service.ts
 import { api } from "@/src/lib/axios"
 import { Disease } from "@/src/types/disease.type"
 import { DiseaseFormValues } from "@/src/schemas/disease.schema"
