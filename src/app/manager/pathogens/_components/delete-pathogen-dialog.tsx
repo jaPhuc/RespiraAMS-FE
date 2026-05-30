@@ -1,6 +1,6 @@
 "use client"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/src/components/ui/alert-dialog"
-import { useDeletePathogen } from "@/src/hooks/mutations/use-delete-pathogen"
+import { useDeletePathogen } from "@/src/hooks/mutations/use-pathogen"
 
 export function DeletePathogenDialog({ open, onOpenChange, pathogenId, pathogenName }: any) {
   const deleteMutation = useDeletePathogen()

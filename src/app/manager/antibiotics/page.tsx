@@ -88,7 +88,7 @@ export default function AntibioticsPage() {
   }
 
   return (
-    <main className="space-y-6">
+    <main className="space-y-6 p-8 space-y-6 max-w-[1200px] mx-auto">
       {/* Hero */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>

@@ -10,7 +10,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/src/components/ui/alert-dialog"
-import { useDeleteDisease } from "@/src/hooks/mutations/use-delete-disease"
+import { useDeleteDisease } from "@/src/hooks/mutations/use-disease"
 
 interface Props {
   open: boolean
