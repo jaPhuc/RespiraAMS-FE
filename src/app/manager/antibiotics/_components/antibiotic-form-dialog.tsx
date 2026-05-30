@@ -47,8 +47,7 @@ import {
 
 import { useAntibioticSpectra } from "@/src/hooks/use-antibiotic-spectra"
 
-import { useUpdateAntibiotic, useCreateAntibiotic } from "@/src/hooks/use-antibiotic"
-
+import { useCreateAntibiotic, useUpdateAntibiotic } from "@/src/hooks/mutations/use-antibiotic"
 import {
   Plus,
   Trash2,

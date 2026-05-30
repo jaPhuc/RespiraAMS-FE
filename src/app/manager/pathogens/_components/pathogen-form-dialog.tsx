@@ -8,8 +8,7 @@ import { Button } from "@/src/components/ui/button"
 import { Textarea } from "@/src/components/ui/textarea"
 import { pathogenSchema, PathogenFormValues } from "@/src/schemas/pathogen.schema"
 import { mapPathogenToForm, mapFormToPathogenPayload } from "@/src/app/mappers/pathogen.mapper"
-import { useCreatePathogen } from "@/src/hooks/mutations/use-create-pathogen"
-import { useUpdatePathogen } from "@/src/hooks/mutations/use-update-pathogen"
+import { useCreatePathogen, useUpdatePathogen } from "@/src/hooks/mutations/use-pathogen"
 
 export function PathogenFormDialog({ open, onOpenChange, initialData }: any) {
   const isEdit = !!initialData

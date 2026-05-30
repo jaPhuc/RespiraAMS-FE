@@ -9,7 +9,7 @@ import {
 
 import { Button } from "@/src/components/ui/button"
 
-import { useDeleteAntibiotic } from "@/src/hooks/use-antibiotic"
+import { useDeleteAntibiotic } from "@/src/hooks/mutations/use-antibiotic"
 
 interface Props {
   open: boolean

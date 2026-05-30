@@ -8,8 +8,7 @@ import { Button } from "@/src/components/ui/button"
 import { Textarea } from "@/src/components/ui/textarea"
 import { diseaseSchema, DiseaseFormValues } from "@/src/schemas/disease.schema"
 import { mapDiseaseToForm, mapFormToDiseasePayload } from "@/src/app/mappers/disease.mapper"
-import { useCreateDisease } from "@/src/hooks/mutations/use-create-disease"
-import { useUpdateDisease } from "@/src/hooks/mutations/use-update-disease"
+import { useCreateDisease, useUpdateDisease } from "@/src/hooks/mutations/use-disease"
 
 export function DiseaseFormDialog({ open, onOpenChange, initialData }: any) {
   const isEdit = !!initialData
