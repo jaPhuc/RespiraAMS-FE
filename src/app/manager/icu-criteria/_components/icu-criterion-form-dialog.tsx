@@ -14,7 +14,7 @@ import { useUpdateIcuCriterion } from "@/src/hooks/mutations/use-icu-criterion"
 import { useDiseases } from "@/src/hooks/queries/use-diseases"
 import { Checkbox } from "@/src/components/ui/checkbox"
 
-export function IcuCriterionFormDialog({ open, onOpenChange, initialData }: any) {
+export function IcuCriterionFormDialog({ open, onOpenChange, initialData, fixedDiseaseId }: any) {
   const isEdit = !!initialData
   const createMutation = useCreateIcuCriterion()
   const updateMutation = useUpdateIcuCriterion()
@@ -24,7 +24,7 @@ export function IcuCriterionFormDialog({ open, onOpenChange, initialData }: any)
   const { register, handleSubmit, reset, control, watch, setValue, formState: { errors } } = useForm<IcuCriterionFormValues>({
     resolver: zodResolver(icuCriterionSchema),
     defaultValues: {
-      diseaseId: "",
+      diseaseId: fixedDiseaseId || "",
       isMainCriteria: false,
       criterion: { name: "", type: "boolean", min: null, max: null, unit: "", isExclusive: false }
     }
@@ -36,10 +36,11 @@ export function IcuCriterionFormDialog({ open, onOpenChange, initialData }: any)
   useEffect(() => {
     if (initialData) reset(mapIcuCriterionToForm(initialData))
     else reset({
-      diseaseId: "", isMainCriteria: false,
+      diseaseId: fixedDiseaseId || "",
+      isMainCriteria: false,
       criterion: { name: "", type: "boolean", min: null, max: null, unit: "", isExclusive: false }
     })
-  }, [initialData, reset, open])
+  }, [initialData, reset, open, , fixedDiseaseId])
 
   const onSubmit = async (values: IcuCriterionFormValues) => {
     const payload = mapFormToIcuCriterionPayload(values)
@@ -52,6 +53,7 @@ export function IcuCriterionFormDialog({ open, onOpenChange, initialData }: any)
     }
   }
 
+  const isDiseaseLocked = !!fixedDiseaseId;
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md p-0 gap-0 overflow-hidden rounded-2xl">
@@ -67,7 +69,7 @@ export function IcuCriterionFormDialog({ open, onOpenChange, initialData }: any)
 
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-gray-700">Bệnh lý</label>
-            <Select value={watch("diseaseId")} onValueChange={(val) => setValue("diseaseId", val)}>
+            <Select value={watch("diseaseId")} onValueChange={(val) => setValue("diseaseId", val)} disabled={isDiseaseLocked}>
               <SelectTrigger className="w-full rounded-lg border-gray-200 bg-white h-10">
                 <SelectValue placeholder="-- Chọn Bệnh Lý --" />
               </SelectTrigger>

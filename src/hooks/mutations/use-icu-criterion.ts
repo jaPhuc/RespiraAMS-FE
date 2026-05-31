@@ -5,7 +5,8 @@ export function useCreateIcuCriterion() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: createIcuCriterion,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["icu-criteria"] }),
+    onSuccess: () => {queryClient.invalidateQueries({ queryKey: ["icu-criteria"] }),
+    queryClient.invalidateQueries({ queryKey: ["disease"] })}
   })
 }
 
@@ -15,7 +16,8 @@ export function useUpdateIcuCriterion() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: ({ id, payload }: { id: string; payload: any }) => updateIcuCriterion(id, payload),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["icu-criteria"] }),
+    onSuccess: () => {queryClient.invalidateQueries({ queryKey: ["icu-criteria"] }),
+    queryClient.invalidateQueries({ queryKey: ["disease"] })}
   })
 }
 
@@ -25,6 +27,7 @@ export function useDeleteIcuCriterion() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: deleteIcuCriterion,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["icu-criteria"] }),
+    onSuccess: () => {queryClient.invalidateQueries({ queryKey: ["icu-criteria"] }),
+    queryClient.invalidateQueries({ queryKey: ["disease"] })}
   })
 }
