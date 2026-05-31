@@ -1,6 +1,7 @@
 "use client"
 import { IcuCriterion } from "@/src/types/icu-criterion.type"
 import { Edit, Trash2 } from "lucide-react"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
 
 interface Props {
   data: IcuCriterion[];
@@ -10,10 +11,18 @@ interface Props {
 
 export function IcuCriterionTable({ data, onEdit, onDelete }: Props) {
   
+  const { data: diseasesData } = useDiseases({ page: 1, pageSize: 100 })
+
+  const getDiseaseName = (id: string) => {
+    if (!diseasesData?.items) return id;
+    const disease = diseasesData.items.find((d) => d.id === id);
+    return disease ? disease.name : id;
+  }
+
   const renderNumericDetails = (min: number | null, max: number | null, unit: string | null, isExclusive: boolean | null) => {
     const formatVal = (val: number | null) => {
       if (val === null) return "0";
-    //   if (val > 1+300) return "∞";
+      if (val > 1E+300) return "∞";
       return val.toString();
     };
 
@@ -54,10 +63,9 @@ export function IcuCriterionTable({ data, onEdit, onDelete }: Props) {
               </td>
 
               <td className="px-6 py-4 align-top">
-                <div className="bg-blue-50 px-2 py-1 rounded border border-blue-100 w-fit">
-                  <p className="text-[10px] text-blue-400 font-semibold uppercase tracking-wider">ID Bệnh Lý</p>
-                  <p className="text-xs text-blue-700 font-mono mt-0.5 truncate max-w-[150px]" title={item.diseaseId}>
-                    {item.diseaseId.split('-')[0]}...{item.diseaseId.split('-')[4]}
+                <div className="bg-blue-50 px-3 py-1.5 rounded-md border border-blue-100 w-fit">
+                  <p className="text-xs text-blue-700 font-bold line-clamp-2" title={getDiseaseName(item.diseaseId)}>
+                    {getDiseaseName(item.diseaseId)}
                   </p>
                 </div>
               </td>
