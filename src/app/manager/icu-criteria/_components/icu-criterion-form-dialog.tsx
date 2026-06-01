@@ -163,7 +163,7 @@ export function IcuCriterionFormDialog({ open, onOpenChange, initialData, fixedD
                     checked={watch("criterion.isExclusive")} 
                     onCheckedChange={(checked) => setValue("criterion.isExclusive", !!checked)} 
                   />
-                  <label htmlFor="exclusive" className="text-sm font-medium cursor-pointer">
+                  <label htmlFor="exclusive" className="text-sm font-medium cursor-pointer text-nowrap">
                     Không bao gồm giá trị biên (Exclusive)
                   </label>
                 </div>
