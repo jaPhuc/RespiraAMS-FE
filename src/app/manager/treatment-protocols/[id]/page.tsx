@@ -3,8 +3,8 @@ import { useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { ArrowLeft, Edit, Plus, Calendar, Stethoscope, AlertTriangle, Building2, Bug } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useTreatmentProtocol } from "@/src/hooks/queries/use-treatment-protocol"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { useTreatmentProtocol } from "@/src/hooks/use-treatment-protocol"
+import { useDiseases } from "@/src/hooks/use-diseases"
 
 import { TreatmentProtocolFormDialog } from "../_components/treatment-protocol-form-dialog"
 import { ProtocolAntibioticTable } from "./_components/protocol-antibiotic-table"
@@ -28,7 +28,7 @@ export default function TreatmentProtocolDetailPage() {
   const diseaseName = diseasesData?.items?.find((d) => d.id === protocol.diseaseId)?.name || protocol.diseaseId
 
   return (
-    <main className="p-8 space-y-8 max-w-[1200px] mx-auto">
+    <main className="p-8 space-y-8 max-w-300 mx-auto">
       {/* Nút Back */}
       <button 
         onClick={() => router.push('/manager/treatment-protocols')}
