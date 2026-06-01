@@ -1,28 +1,26 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
-import { ResistanceRiskPayload } from "@/src/types/resistance-risk.type"
-import { createResistanceRisk, updateResistanceRisk, deleteResistanceRisk } from "@/src/services/resistance-risk.service"
+import { api } from "@/src/lib/axios"
 
 export function useCreateResistanceRisk() {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: createResistanceRisk,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["resistance-risks"] }),
+    mutationFn: async (payload: any) => (await api.post("/resistance-risks", payload)).data,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["disease"] }) // Ép trang chi tiết F5
   })
 }
 
 export function useUpdateResistanceRisk() {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: ({ id, payload }: { id: string; payload: ResistanceRiskPayload }) =>
-      updateResistanceRisk(id, payload),
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["resistance-risks"] }),
+    mutationFn: async ({ id, payload }: { id: string; payload: any }) => (await api.put(`/resistance-risks/${id}`, payload)).data,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["disease"] })
   })
 }
 
 export function useDeleteResistanceRisk() {
   const queryClient = useQueryClient()
   return useMutation({
-    mutationFn: deleteResistanceRisk,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["resistance-risks"] }),
+    mutationFn: async (id: string) => (await api.delete(`/resistance-risks/${id}`)).data,
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ["disease"] })
   })
 }
