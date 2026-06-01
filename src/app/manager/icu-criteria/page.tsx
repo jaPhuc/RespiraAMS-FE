@@ -2,9 +2,9 @@
 import { useState } from "react"
 import { Plus, Filter, Download, ActivitySquare } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useIcuCriteria } from "@/src/hooks/queries/use-icu-criteria"
+import { useIcuCriteria } from "@/src/hooks/use-icu-criteria"
 import { IcuCriterionTable } from "./_components/icu-criterion-table"
-import { PaginationSection } from "../antibiotics/_components/pagination" // Tái sử dụng pagination component cũ
+import { PaginationSection } from "@/src/components/layout/pagination" // Tái sử dụng pagination component cũ
 import { DeleteIcuCriterionDialog } from "./_components/delete-icu-criterion-dialog"
 import { IcuCriterionFormDialog } from "./_components/icu-criterion-form-dialog"
 

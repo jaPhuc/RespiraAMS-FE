@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { createDisease, updateDisease, deleteDisease } from "@/src/services/disease.service"
+import { DiseaseFormValues } from "@/src/schemas/disease.schema"
 
 export function useCreateDisease() {
   const queryClient = useQueryClient()

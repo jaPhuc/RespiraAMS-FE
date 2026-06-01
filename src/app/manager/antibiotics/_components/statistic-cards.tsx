@@ -25,29 +25,29 @@ export function StatisticsCards({
         </CardContent>
       </Card>
 
-      <Card>
-        <CardContent className="p-6">
-          <p className="text-sm text-muted-foreground">
-            Current Page
-          </p>
+      {/*<Card>*/}
+      {/*  <CardContent className="p-6">*/}
+      {/*    <p className="text-sm text-muted-foreground">*/}
+      {/*      Current Page*/}
+      {/*    </p>*/}
 
-          <h2 className="text-2xl font-bold">
-            {metadata.currentPage}
-          </h2>
-        </CardContent>
-      </Card>
+      {/*    <h2 className="text-2xl font-bold">*/}
+      {/*      {metadata.currentPage}*/}
+      {/*    </h2>*/}
+      {/*  </CardContent>*/}
+      {/*</Card>*/}
 
-      <Card>
-        <CardContent className="p-6">
-          <p className="text-sm text-muted-foreground">
-            Total Pages
-          </p>
+      {/*<Card>*/}
+      {/*  <CardContent className="p-6">*/}
+      {/*    <p className="text-sm text-muted-foreground">*/}
+      {/*      Total Pages*/}
+      {/*    </p>*/}
 
-          <h2 className="text-2xl font-bold">
-            {metadata.pageCount}
-          </h2>
-        </CardContent>
-      </Card>
+      {/*    <h2 className="text-2xl font-bold">*/}
+      {/*      {metadata.pageCount}*/}
+      {/*    </h2>*/}
+      {/*  </CardContent>*/}
+      {/*</Card>*/}
     </div>
   )
 }

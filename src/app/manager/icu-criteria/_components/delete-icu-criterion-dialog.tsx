@@ -1,4 +1,3 @@
-// src/app/manager/icu-criteria/_components/delete-icu-criterion-dialog.tsx
 "use client"
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/src/components/ui/alert-dialog"
 import { useDeleteIcuCriterion } from "@/src/hooks/mutations/use-icu-criterion"

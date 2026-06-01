@@ -1,7 +1,7 @@
 "use client"
 import { TreatmentProtocol } from "@/src/types/treatment-protocol.type"
 import { Edit, Trash2, FileText, Activity } from "lucide-react"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { useDiseases } from "@/src/hooks/use-diseases"
 
 interface Props {
   data: TreatmentProtocol[];
@@ -15,7 +15,7 @@ export function TreatmentProtocolTable({ data, onEdit, onDelete, onViewDetail }:
 
   const getDiseaseName = (id: string) => {
     if (!diseasesData?.items) return id;
-    const disease = diseasesData.items.find((d) => d.id === id);
+    const disease = diseasesData.items.find((d: { id: string; }) => d.id === id);
     return disease ? disease.name : id;
   }
 

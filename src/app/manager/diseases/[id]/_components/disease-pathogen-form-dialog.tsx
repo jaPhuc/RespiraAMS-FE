@@ -9,8 +9,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { diseasePathogenSchema, DiseasePathogenFormValues } from "@/src/schemas/disease-pathogen.schema"
 import { mapPathogenToForm, mapFormToPathogenPayload } from "@/src/app/mappers/disease-pathogen.mapper"
 import { useCreateDiseasePathogen, useUpdateDiseasePathogen } from "@/src/hooks/mutations/use-disease-pathogen"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
-import { usePathogens } from "@/src/hooks/queries/use-pathogens"
+import { useDiseases } from "@/src/hooks/use-diseases"
+import { usePathogens } from "@/src/hooks/use-pathogens"
 
 export function DiseasePathogenFormDialog({ open, onOpenChange, initialData, fixedDiseaseId }: any) {
   const isEdit = !!initialData

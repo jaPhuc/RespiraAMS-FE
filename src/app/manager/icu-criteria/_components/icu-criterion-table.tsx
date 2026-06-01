@@ -1,7 +1,7 @@
 "use client"
 import { IcuCriterion } from "@/src/types/icu-criterion.type"
 import { Edit, Trash2 } from "lucide-react"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { useDiseases } from "@/src/hooks/use-diseases"
 
 interface Props {
   data: IcuCriterion[];
@@ -15,7 +15,7 @@ export function IcuCriterionTable({ data, onEdit, onDelete }: Props) {
 
   const getDiseaseName = (id: string) => {
     if (!diseasesData?.items) return id;
-    const disease = diseasesData.items.find((d) => d.id === id);
+    const disease = diseasesData.items.find((d: { id: string; }) => d.id === id);
     return disease ? disease.name : id;
   }
 
