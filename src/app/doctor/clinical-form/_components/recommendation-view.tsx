@@ -27,17 +27,6 @@ interface RecommendationViewProps {
   onBack: () => void
 }
 
-const routeLabels: Record<string, string> = {
-  oral: "Uống",
-  intravenous: "Tĩnh mạch",
-  im: "Tiêm bắp",
-  sc: "Dưới da",
-  inhalation: "Hít",
-  topical: "Bôi ngoài",
-  rectal: "Đặt trực tràng",
-  sublingual: "Ngậm dưới lưỡi",
-}
-
 function capitalize(str: string) {
   if (!str) return str
   return str.charAt(0).toUpperCase() + str.slice(1)
@@ -63,17 +52,15 @@ function MedicineTable({ medicines }: { medicines: TreatmentProtocol["medicines"
             <TableCell>{medicine.antibioticSpectrum.name}</TableCell>
             <TableCell>{capitalize(medicine.category)}</TableCell>
             <TableCell>
-              <div className="flex flex-col gap-1.5">
+              <div className="space-y-3">
                 {medicine.routeOfAdministrations.map((route) => (
-                  <div key={route} className="flex items-center gap-4">
-                    <span className="text-xs font-semibold tracking-wider text-muted-foreground whitespace-nowrap min-w-10">{routeLabels[route] || route}</span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {medicine.dosages[route]?.map((d, i) => (
-                        <span key={i} className="inline-flex items-center rounded-md border bg-muted/50 px-2 py-0.5 text-sm font-medium">
-                          {d}
-                        </span>
+                  <div key={route}>
+                    <p className="font-bold text-gray-800 uppercase text-xs mb-1 bg-gray-100 w-fit px-2 py-0.5 rounded">{route}</p>
+                    <ul className="list-disc pl-5 text-sm text-gray-600">
+                      {medicine.dosages[route]?.map((dosage) => (
+                        <li key={dosage}>{dosage}</li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 ))}
               </div>
