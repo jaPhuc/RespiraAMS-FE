@@ -3,7 +3,6 @@ import { Edit, Trash2 } from "lucide-react"
 
 export function ResistanceRiskTable({ data, onEdit, onDelete }: any) {
   
-  // 👉 Bế nguyên hàm render thông số Numeric từ bảng ICU qua đây
   const renderNumericDetails = (min: number | null, max: number | null, unit: string | null, isExclusive: boolean | null) => {
     const formatVal = (val: number | null) => val === null ? "0" : (val > 1E+300 ? "∞" : val.toString());
     const bracketOpen = isExclusive ? "(" : "[";
@@ -38,7 +37,6 @@ export function ResistanceRiskTable({ data, onEdit, onDelete }: any) {
                 <span className="bg-purple-100 text-purple-800 text-xs font-bold px-2.5 py-1 rounded-md">🦠 {item.pathogen?.name}</span>
               </td>
               
-              {/* 👉 Cập nhật lại cột này để show UI chi tiết */}
               <td className="px-6 py-4 align-top">
                 <p className="text-sm font-bold text-amber-700 mb-1.5">{item.criterion?.name}</p>
                 
@@ -51,7 +49,6 @@ export function ResistanceRiskTable({ data, onEdit, onDelete }: any) {
                   {item.criterion?.type?.toLowerCase() === "numeric" ? "Numeric (Số)" : "Boolean (Có/Không)"}
                 </span>
 
-                {/* Show chi tiết nếu là Numeric */}
                 {item.criterion?.type?.toLowerCase() === "numeric" && renderNumericDetails(
                   item.criterion.min, 
                   item.criterion.max, 

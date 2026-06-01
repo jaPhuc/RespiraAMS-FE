@@ -44,12 +44,10 @@ export default function DiseaseDetailPage() {
   return (
     <main className="p-8 space-y-8 max-w-[1200px] mx-auto">
       
-      {/* Nút Back */}
       <button onClick={() => router.push('/manager/diseases')} className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#006591] transition-colors w-fit font-medium">
         <ArrowLeft className="h-4 w-4" /> Quay lại danh sách
       </button>
       
-      {/* THÔNG TIN CHUNG BỆNH LÝ */}
       <div className="bg-[#006591] rounded-2xl p-8 text-white shadow-md flex justify-between items-start relative overflow-hidden">
         <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
           <Activity className="w-64 h-64 -mt-10 -mr-10" />
@@ -67,7 +65,6 @@ export default function DiseaseDetailPage() {
         </button>
       </div>
 
-      {/* HÀNG 1: TIÊU CHUẨN ICU */}
       <div className="space-y-4 pt-2">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
@@ -88,7 +85,6 @@ export default function DiseaseDetailPage() {
         )}
       </div>
 
-      {/* HÀNG 2: YẾU TỐ NGUY CƠ KHÁNG THUỐC */}
       <div className="space-y-4 pt-6 border-t">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
@@ -109,7 +105,6 @@ export default function DiseaseDetailPage() {
         )}
       </div>
 
-      {/* HÀNG 3: TÁC NHÂN GÂY BỆNH */}
       <div className="space-y-4 pt-6 border-t">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2">
