@@ -71,7 +71,7 @@ export default function DiseaseDetailPage() {
                 {disease.icuHospitalizedCriteria.map((item) => (
                   <li key={item.id} className="text-sm text-gray-700 flex items-start gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0"></span>
-                    <span>{item.name}</span>
+                    <span>{item.criterion.name}</span>
                   </li>
                 ))}
               </ul>

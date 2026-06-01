@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Shield } from "lucide-react"
+import { ArrowRight, ArrowLeft, Shield } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
 import { Card } from "@/src/components/ui/card"
 
@@ -19,10 +19,16 @@ export default function Page() {
         <p className="mb-8 text-sm text-gray-400">
           Quản lý kháng sinh, tác nhân gây bệnh, phổ kháng sinh và phác đồ điều trị.
         </p>
-        <div className="flex items-center justify-center gap-4">
-          <Button className="gap-2 bg-primary hover:bg-primary/80" asChild>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button className="gap-2 w-full sm:w-auto bg-[#0d2b3e] hover:bg-[#0d2b3e]/90" asChild>
             <Link href="/manager/antibiotics">
-              Vào hệ thống
+              <ArrowLeft className="h-4 w-4" />
+              Quản lý
+            </Link>
+          </Button>
+          <Button className="gap-2 w-full sm:w-auto bg-[#ECEEF0] text-gray-800 hover:bg-[#ECEEF0]/80 border border-gray-200" asChild>
+            <Link href="/doctor/clinical-form">
+              Bác sĩ
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>

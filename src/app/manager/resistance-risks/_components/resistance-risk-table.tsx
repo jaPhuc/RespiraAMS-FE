@@ -35,8 +35,8 @@ export function ResistanceRiskTable({ data, diseaseMap, onEdit, onDelete }: Prop
           <tr>
             <th colSpan={2} className="px-4 py-4 text-[12px] font-bold uppercase tracking-wider">Bệnh lý</th>
             <th colSpan={2} className="px-4 py-4 text-[12px] font-bold uppercase tracking-wider">Tác nhân</th>
+            <th colSpan={3} className="px-4 py-4 text-[12px] font-bold uppercase tracking-wider">Nguy cơ</th>
             <th colSpan={3} className="px-4 py-4 text-[12px] font-bold uppercase tracking-wider">Tiêu chí</th>
-            <th colSpan={3} className="px-4 py-4 text-[12px] font-bold uppercase tracking-wider">Mô tả</th>
             <th colSpan={2} className="px-4 py-4 text-[12px] font-bold uppercase tracking-wider text-center">Thao tác</th>
           </tr>
         </thead>
@@ -58,13 +58,13 @@ export function ResistanceRiskTable({ data, diseaseMap, onEdit, onDelete }: Prop
                 </div>
               </td>
               <td colSpan={3} className="px-4 py-5 align-top">
+                <p className="text-sm text-gray-600">{item.name}</p>
+              </td>
+              <td colSpan={3} className="px-4 py-5 align-top">
                 <p className="text-sm text-gray-700">{item.criterion.name}</p>
                 {desc && (
                   <p className="mt-1 text-xs text-gray-400 italic">{desc}</p>
                 )}
-              </td>
-              <td colSpan={3} className="px-4 py-5 align-top">
-                <p className="text-sm text-gray-600">{item.name}</p>
               </td>
               <td colSpan={2} className="px-4 py-5 align-top text-center">
                 <div className="flex items-center justify-center gap-2">
