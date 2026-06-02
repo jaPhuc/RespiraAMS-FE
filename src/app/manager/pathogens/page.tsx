@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Plus, Filter, Download, Bug } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { usePathogens } from "@/src/hooks/use-pathogens"
+import { usePathogens } from "@/src/hooks/queries/use-pathogens"
 import { PathogenTable } from "./_components/pathogen-table"
 import { PathogenFormDialog } from "./_components/pathogen-form-dialog"
 import { DeletePathogenDialog } from "./_components/delete-pathogen-dialog"

@@ -10,7 +10,7 @@ import {
 
 import { Button } from "@/src/components/ui/button"
 
-import { useDeleteAntibioticSpectrum } from "@/src/hooks/use-antibiotic-spectra"
+import { useDeleteAntibioticSpectrum } from "@/src/hooks/mutations/use-antibiotic-spectra"
 
 interface Props {
   open: boolean

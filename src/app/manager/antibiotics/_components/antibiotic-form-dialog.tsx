@@ -45,7 +45,7 @@ import {
   mapFormToPayload,
 } from "@/src/app/mappers/antibiotic.mapper"
 
-import { useAntibioticSpectra } from "@/src/hooks/use-antibiotic-spectra"
+import { useAntibioticSpectra } from "@/src/hooks/queries/use-antibiotic-spectra"
 
 import { useCreateAntibiotic, useUpdateAntibiotic } from "@/src/hooks/mutations/use-antibiotic"
 import {

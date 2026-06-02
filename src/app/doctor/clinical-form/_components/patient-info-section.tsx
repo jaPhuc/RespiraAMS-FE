@@ -145,10 +145,6 @@ export function PatientInfoSection({
                 <SelectItem value="female">
                   Nữ
                 </SelectItem>
-
-                <SelectItem value="other">
-                  Khác
-                </SelectItem>
               </SelectContent>
             </Select>
           </div>

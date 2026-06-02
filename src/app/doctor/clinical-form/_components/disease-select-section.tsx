@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/src/components/ui/select"
-import { useDiseases } from "@/src/hooks/use-diseases"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
 import { Disease } from "@/src/types/disease.type"
 
 interface DiseaseSelectSectionProps {

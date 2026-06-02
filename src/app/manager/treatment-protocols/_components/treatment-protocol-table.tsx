@@ -1,7 +1,7 @@
 "use client"
 import { TreatmentProtocol } from "@/src/types/treatment-protocol.type"
 import { Edit, Trash2, FileText, Activity } from "lucide-react"
-import { useDiseases } from "@/src/hooks/use-diseases"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
 
 interface Props {
   data: TreatmentProtocol[];

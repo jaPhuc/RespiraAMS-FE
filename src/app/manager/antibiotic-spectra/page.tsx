@@ -6,7 +6,7 @@ import { Plus } from "lucide-react"
 
 import { Button } from "@/src/components/ui/button"
 
-import { useAntibioticSpectra } from "@/src/hooks/use-antibiotic-spectra"
+import { useAntibioticSpectra } from "@/src/hooks/queries/use-antibiotic-spectra"
 
 import { AntibioticSpectrumTable } from "./_components/antibiotic-spectra-table"
 

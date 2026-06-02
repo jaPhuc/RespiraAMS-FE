@@ -11,7 +11,7 @@ import { icuCriterionSchema, IcuCriterionFormValues } from "@/src/schemas/icu-cr
 import { mapIcuCriterionToForm, mapFormToIcuCriterionPayload } from "@/src/app/mappers/icu-criterion.mapper"
 import { useCreateIcuCriterion } from "@/src/hooks/mutations/use-icu-criterion"
 import { useUpdateIcuCriterion } from "@/src/hooks/mutations/use-icu-criterion"
-import { useDiseases } from "@/src/hooks/use-diseases"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
 import { Checkbox } from "@/src/components/ui/checkbox"
 
 export function IcuCriterionFormDialog({ open, onOpenChange, initialData, fixedDiseaseId }: any) {

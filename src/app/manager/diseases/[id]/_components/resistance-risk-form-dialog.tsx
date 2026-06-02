@@ -11,8 +11,8 @@ import { Checkbox } from "@/src/components/ui/checkbox"
 import { resistanceRiskSchema, ResistanceRiskFormValues } from "@/src/schemas/resistance-risk.schema"
 import { mapRiskToForm, mapFormToRiskPayload } from "@/src/app/mappers/resistance-risk.mapper"
 import { useCreateResistanceRisk, useUpdateResistanceRisk } from "@/src/hooks/mutations/use-resistance-risk"
-import { useDiseases } from "@/src/hooks/use-diseases"
-import { usePathogens } from "@/src/hooks/use-pathogens" // Gọi thêm Tác nhân
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { usePathogens } from "@/src/hooks/queries/use-pathogens" // Gọi thêm Tác nhân
 
 export function ResistanceRiskFormDialog({ open, onOpenChange, initialData, fixedDiseaseId }: any) {
   const isEdit = !!initialData

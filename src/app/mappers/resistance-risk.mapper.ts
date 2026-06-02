@@ -26,8 +26,8 @@ export function mapFormToRiskPayload(values: ResistanceRiskFormValues) {
     criterion: {
       name: values.criterion.name,
       type: values.criterion.type,
-      min: isNum && values.criterion.min !== null ? values.criterion.min.toString() : "",
-      max: isNum && values.criterion.max !== null ? values.criterion.max.toString() : "",
+      min: isNum && values.criterion.min !== null ? values.criterion.min.toString() : null,
+      max: isNum && values.criterion.max !== null ? values.criterion.max.toString() : null,
       unit: isNum ? (values.criterion.unit || null) : null,
       isExclusive: isNum ? values.criterion.isExclusive : null
     }

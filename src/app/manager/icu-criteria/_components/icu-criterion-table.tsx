@@ -1,7 +1,7 @@
 "use client"
 import { IcuCriterion } from "@/src/types/icu-criterion.type"
 import { Edit, Trash2 } from "lucide-react"
-import { useDiseases } from "@/src/hooks/use-diseases"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
 
 interface Props {
   data: IcuCriterion[];

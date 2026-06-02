@@ -15,7 +15,7 @@ import { StatisticsCards } from "./_components/statistic-cards"
 import { AntibioticTable } from "./_components/antibiotic-table"
 import { PaginationSection } from "@/src/components/layout/pagination"
 
-import { useAntibiotics } from "@/src/hooks/use-antibiotic"
+import { useAntibiotics } from "@/src/hooks/queries/use-antibiotic"
 import { AntibioticFormDialog } from "./_components/antibiotic-form-dialog"
 import { DeleteAntibioticDialog } from "./_components/delete-antibiotic-dialog"
 

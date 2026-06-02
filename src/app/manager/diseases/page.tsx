@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { Plus, Filter, Download } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useDiseases } from "@/src/hooks/use-diseases"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
 import { DiseaseTable } from "./_components/disease-table"
 import { DiseaseFormDialog } from "./_components/disease-form-dialog"
 import { PaginationSection } from "@/src/components/layout/pagination"

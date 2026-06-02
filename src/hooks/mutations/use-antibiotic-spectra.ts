@@ -1,36 +1,13 @@
 import {
   useMutation,
-  useQuery,
   useQueryClient,
 } from "@tanstack/react-query"
 
 import {
   createAntibioticSpectrum,
   deleteAntibioticSpectrum,
-  getAntibioticSpectra,
   updateAntibioticSpectrum,
 } from "@/src/services/antibiotic-spectrum.service"
-
-export function useAntibioticSpectra(
-  params?: {
-    page?: number
-    pageSize?: number
-  }
-) {
-  return useQuery({
-    queryKey: [
-      "antibiotic-spectra",
-      params,
-    ],
-
-    queryFn: () =>
-      getAntibioticSpectra({
-        page: params?.page ?? 1,
-        pageSize:
-          params?.pageSize ?? 10,
-      }),
-  })
-}
 
 export function useCreateAntibioticSpectrum() {
   const queryClient =

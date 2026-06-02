@@ -21,7 +21,7 @@ import { Textarea } from "@/src/components/ui/textarea"
 
 import { antibioticSpectrumSchema, AntibioticSpectrumSchemaFormValues  } from "@/src/schemas/antibiotic-spectrum.schema"
 
-import { useCreateAntibioticSpectrum, useUpdateAntibioticSpectrum } from "@/src/hooks/use-antibiotic-spectra"
+import { useCreateAntibioticSpectrum, useUpdateAntibioticSpectrum } from "@/src/hooks/mutations/use-antibiotic-spectra"
 
 interface Props {
   open: boolean

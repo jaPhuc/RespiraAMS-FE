@@ -28,8 +28,8 @@ import {
   ResistanceRiskFormValues,
 } from "@/src/schemas/resistance-risk.schema"
 
-import { useDiseases } from "@/src/hooks/use-diseases"
-import { usePathogens } from "@/src/hooks/use-pathogens"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { usePathogens } from "@/src/hooks/queries/use-pathogens"
 
 import { useCreateResistanceRisk, useUpdateResistanceRisk } from "@/src/hooks/mutations/use-resistance-risk"
 
@@ -74,7 +74,7 @@ export function ResistanceRiskFormDialog({
         min: "",
         max: "",
         unit: "",
-        isExclusive: "",
+        isExclusive: false,
       },
       name: "",
     },
@@ -99,7 +99,7 @@ export function ResistanceRiskFormDialog({
           min: initialData.criterion.min != null ? String(initialData.criterion.min) : "",
           max: initialData.criterion.max != null ? String(initialData.criterion.max) : "",
           unit: initialData.criterion.unit ?? "",
-          isExclusive: "",
+          isExclusive: false,
         },
         name: initialData.name,
       })
@@ -113,7 +113,7 @@ export function ResistanceRiskFormDialog({
           min: "",
           max: "",
           unit: "",
-          isExclusive: "",
+          isExclusive: false,
         },
         name: "",
       })

@@ -5,7 +5,7 @@ import { useMutation } from "@tanstack/react-query"
 
 import { Button } from "@/src/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/src/components/ui/card"
-import { useDisease } from "@/src/hooks/use-disease"
+import { useDisease } from "@/src/hooks/queries/use-diseases"
 import { diagnose } from "@/src/services/diagnose.service"
 import { recommend } from "@/src/services/recommend.service"
 import { DiagnoseResponse } from "@/src/types/diagnose.type"

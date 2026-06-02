@@ -15,10 +15,10 @@ import { useCreateTreatmentProtocol } from "@/src/hooks/mutations/use-treatment-
 import { useUpdateTreatmentProtocol } from "@/src/hooks/mutations/use-treatment-protocol"
 
 // Import hooks
-import { useDiseases } from "@/src/hooks/use-diseases"
-import { usePathogens } from "@/src/hooks/use-pathogens"
-import { useAntibiotics } from "@/src/hooks/use-antibiotic"
-import { useIcuCriteria } from "@/src/hooks/use-icu-criteria"
+import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { usePathogens } from "@/src/hooks/queries/use-pathogens"
+import { useAntibiotics } from "@/src/hooks/queries/use-antibiotic"
+import { useIcuCriteria } from "@/src/hooks/queries/use-icu-criteria"
 
 export function TreatmentProtocolFormDialog({ open, onOpenChange, initialData }: any) {
   const isEdit = !!initialData
