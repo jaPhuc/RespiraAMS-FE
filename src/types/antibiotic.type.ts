@@ -12,16 +12,13 @@ export interface Antibiotic {
   dosages: Record<string, string[]>
 }
 
-export interface PaginationMetadata {
-  hasNextPage: boolean
-  hasPreviousPage: boolean
-  totalItemCount: number
-  pageCount: number
-  currentPage: number
-  pageSize: number
-}
-
-export interface AntibioticsResponse {
-  metadata: PaginationMetadata
-  items: Antibiotic[]
+export interface AntibioticPayload {
+  name: string
+  antibioticSpectrumId: string
+  category: string
+  routeOfAdministrations: string[]
+  dosages: Record<
+    string,
+    string[]
+  >
 }

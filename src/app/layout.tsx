@@ -5,9 +5,8 @@ import "@/src/app/globals.css"
 import { cn } from "@/src/lib/utils";
 import QueryProvider from "@/src/providers/query-provider"
 
-import { DashboardSidebar } from "@/src/components/layout/dashboard-sidebar"
+import { SidebarShell } from "@/src/components/layout/sidebar-shell"
 import { DashboardHeader } from "@/src/components/layout/dashboard-header"
-import { SIDEBAR_WIDTH } from "@/src/constants/navigations"
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'})
 
@@ -29,7 +28,7 @@ export default function RootLayout({
     >
       <body>
         <div className="min-h-screen bg-[#f8f9ff]">
-          <DashboardSidebar />
+          <SidebarShell />
 
           <div
             className="
@@ -39,7 +38,7 @@ export default function RootLayout({
           >
             <DashboardHeader />
 
-            <main className="p-4 lg:p-8">
+            <main className="px-4 py-2 lg:px-8 lg:py-4">
               <QueryProvider>{children}</QueryProvider>
             </main>
           </div>

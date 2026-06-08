@@ -1,5 +1,6 @@
 import { api } from "@/src/lib/axios"
-import { AntibioticsResponse } from "@/src/types/antibiotic.type"
+import { PaginationResponse } from "@/src/types/common.type"
+import { Antibiotic, AntibioticPayload } from "@/src/types/antibiotic.type"
 
 interface GetAntibioticsParams {
   page?: number
@@ -9,7 +10,7 @@ interface GetAntibioticsParams {
 export async function getAntibiotics({
   page = 1,
   pageSize = 10,
-}: GetAntibioticsParams): Promise<AntibioticsResponse> {
+}: GetAntibioticsParams): Promise<PaginationResponse<Antibiotic>> {
   const response = await api.get("/Antibiotics", {
     params: {
       page,
@@ -21,7 +22,7 @@ export async function getAntibiotics({
 }
 
 export async function createAntibiotic(
-  payload: any
+  payload: AntibioticPayload
 ) {
   const response = await api.post(
     "/Antibiotics",
@@ -33,7 +34,7 @@ export async function createAntibiotic(
 
 export async function updateAntibiotic(
   id: string,
-  payload: any
+  payload: AntibioticPayload
 ) {
   const response = await api.put(
     `/Antibiotics/${id}`,

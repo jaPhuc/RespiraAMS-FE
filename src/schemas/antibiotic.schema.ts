@@ -4,21 +4,22 @@ export const antibioticSchema =
   z.object({
     name: z
       .string()
-      .min(1, "Name is required"),
+      .trim()
+      .min(1, "Vui lòng nhập tên thuốc"),
 
     antibioticSpectrumId:
       z
         .string()
         .min(
           1,
-          "Spectrum is required"
+          "Vui lòng chọn phổ kháng khuẩn!"
         ),
 
     category: z
       .string()
       .min(
         1,
-        "Category is required"
+        "Vui lòng chọn phân loại!"
       ),
 
     routeOfAdministrations:
@@ -26,14 +27,19 @@ export const antibioticSchema =
         .array(z.string())
         .min(
           1,
-          "Select at least one route"
+          "Vui lòng chọn ít nhất 1 đường dùng!"
         ),
 
-    dosages: z.record(
-      z.string(),
-      z.array(z.string())
-    ),
-  })
+    dosages: z.record(z.string(), z.array(z.string())),
+  }).refine((data) => {
+      return data.routeOfAdministrations.every((route) => {
+        const routeDosages = data.dosages[route];
+        return routeDosages && routeDosages.some((d) => d.trim() !== "");
+      });
+    }, {
+      message: "Vui lòng nhập liều dùng cho đường dùng đã chọn!",
+      path: ["dosages"],
+    });
 
 export type AntibioticFormValues =
   z.infer<
