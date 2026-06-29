@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation"
 import { Plus, Download, Stethoscope, X } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/src/components/ui/select"
-import { useTreatmentProtocols } from "@/src/hooks/queries/use-treatment-protocols"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
-import { TreatmentProtocolTable } from "./_components/treatment-protocol-table"
-import { PaginationSection } from "@/src/components/layout/pagination"
-import { DeleteTreatmentProtocolDialog } from "./_components/delete-treatment-protocol-dialog"
-import { TreatmentProtocolFormDialog } from "./_components/treatment-protocol-form-dialog"
+import { useTreatmentProtocols } from "@/src/features/manager/treatment-protocols/api"
+import { useDiseases } from "@/src/features/manager/diseases/api"
+import { TreatmentProtocolTable } from "@/src/features/manager/treatment-protocols/components/treatment-protocol-table"
+import { PaginationSection } from "@/src/features/manager/layouts/pagination"
+import { DeleteTreatmentProtocolDialog } from "@/src/features/manager/treatment-protocols/components/delete-treatment-protocol-dialog"
+import { TreatmentProtocolFormDialog } from "@/src/features/manager/treatment-protocols/components/treatment-protocol-form-dialog"
 
 export default function TreatmentProtocolsPage() {
   const router = useRouter()
@@ -35,7 +35,7 @@ export default function TreatmentProtocolsPage() {
   if (isError || !data) return <div className="p-8 text-red-500 font-medium">Lỗi kết nối API!</div>
 
   return (
-    <main className="p-8 space-y-6 max-w-[1200px] mx-auto">
+    <main className="p-8 space-y-6 max-w-300 mx-auto">
       {/* Header */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
@@ -45,18 +45,6 @@ export default function TreatmentProtocolsPage() {
         <Button className="gap-2 bg-[#006591] hover:bg-[#004c6e] text-white shadow-sm" onClick={() => { setSelectedItem(null); setOpenForm(true); }}>
           <Plus className="h-4 w-4" /> Thêm Phác Đồ Mới
         </Button>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="rounded-xl border bg-white p-5 shadow-sm">
-          <div className="flex items-center justify-between mb-2">
-            <div className="rounded-lg bg-blue-50 p-2 text-[#006591]">
-              <Stethoscope className="h-5 w-5" />
-            </div>
-          </div>
-          <h3 className="text-2xl font-bold text-[#006591]">{data.metadata.totalItemCount}</h3>
-          <p className="text-sm text-gray-500 font-medium">Tổng số phác đồ</p>
-        </div>
       </div>
 
       <section className="overflow-hidden rounded-xl border bg-white shadow-sm">

@@ -3,13 +3,13 @@ import { useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import { ArrowLeft, Edit, Plus, Calendar, Stethoscope, AlertTriangle, Building2, Bug } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useTreatmentProtocol } from "@/src/hooks/queries/use-treatment-protocols"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
+import { useTreatmentProtocol } from "@/src/features/manager/treatment-protocols/api"
+import { useDiseases } from "@/src/features/manager/diseases/api"
 
-import { TreatmentProtocolFormDialog } from "../_components/treatment-protocol-form-dialog"
-import { ProtocolAntibioticTable } from "./_components/protocol-antibiotic-table"
-import { ProtocolCriterionTable } from "./_components/protocol-criterion-table"
-import { OtherCriterionFormDialog } from "./_components/other-criterion-form-dialog"
+import { TreatmentProtocolFormDialog } from "@/src/features/manager/treatment-protocols/components/treatment-protocol-form-dialog"
+import { ProtocolAntibioticTable } from "@/src/features/manager/treatment-protocols/detail/components/protocol-antibiotic-table"
+import { ProtocolCriterionTable } from "@/src/features/manager/treatment-protocols/detail/components/protocol-criterion-table"
+import { OtherCriterionFormDialog } from "@/src/features/manager/treatment-protocols/detail/components/other-criterion-form-dialog"
 
 export default function TreatmentProtocolDetailPage() {
   const params = useParams()

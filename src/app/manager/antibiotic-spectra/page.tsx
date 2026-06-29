@@ -2,20 +2,20 @@
 
 import { useState } from "react"
 
-import { Plus } from "lucide-react"
+import { Download, Filter, Plus } from "lucide-react"
 
 import { Button } from "@/src/components/ui/button"
 
-import { useAntibioticSpectra } from "@/src/hooks/queries/use-antibiotic-spectra"
+import { useAntibioticSpectra } from "@/src/features/manager/antibiotic-spectra/api"
 
-import { AntibioticSpectrumTable } from "./_components/antibiotic-spectra-table"
+import { AntibioticSpectrumTable } from "@/src/features/manager/antibiotic-spectra/components/antibiotic-spectra-table"
 
-import { AntibioticSpectrumFormDialog } from "./_components/antibiotic-spectrum-form-dialog"
+import { AntibioticSpectrumFormDialog } from "@/src/features/manager/antibiotic-spectra/components/antibiotic-spectrum-form-dialog"
 
-import { DeleteAntibioticSpectrumDialog } from "./_components/delete-antibiotic-spectrum-dialog"
+import { DeleteAntibioticSpectrumDialog } from "@/src/features/manager/antibiotic-spectra/components/delete-antibiotic-spectrum-dialog"
 
-import { AntibioticSpectrum } from "@/src/types/spectrum.type"
-import { PaginationSection } from "@/src/components/layout/pagination"
+import { AntibioticSpectrum } from "@/src/features/manager/antibiotic-spectra/types"
+import { PaginationSection } from "@/src/features/manager/layouts/pagination"
 
 export default function AntibioticSpectraPage() {
   const [page, setPage] =
@@ -89,7 +89,7 @@ export default function AntibioticSpectraPage() {
   }
 
   return (
-    <main className="space-y-6">
+    <main className="space-y-6 p-8 max-w-300 mx-auto">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl text-primary font-bold mb-2">
@@ -109,6 +109,29 @@ export default function AntibioticSpectraPage() {
             Thêm phổ mới
         </Button>
       </div>
+
+      <section className="overflow-hidden rounded-xl border bg-white shadow-sm">
+        <div className="flex items-center justify-between border-b px-6 py-4">
+          <h3 className="text-lg font-semibold text-primary">
+            Danh sách phổ kháng sinh hiện có
+          </h3>
+
+          <div className="flex gap-2">
+            <Button
+              size="icon"
+              variant="ghost"
+            >
+              <Filter className="h-4 w-4" />
+            </Button>
+
+            <Button
+              size="icon"
+              variant="ghost"
+            >
+              <Download className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
 
       <AntibioticSpectrumTable
         data={data.items}
@@ -140,6 +163,7 @@ export default function AntibioticSpectraPage() {
           spectrumId={selectedSpectrum.id}
         />
       )}
+      </section>
     </main>
   )
 }

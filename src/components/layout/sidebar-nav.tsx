@@ -36,12 +36,11 @@ export function SidebarNav({ variant = "manager" }: SidebarNavProps) {
             key={item.href}
             href={item.href}
             className={`
-flex items-center gap-4
-py-3 pl-5
-transition-all duration-200
-
-${isActive ? isActiveStyle : inactiveStyle}
-`}
+              flex items-center gap-4
+              py-3 pl-5
+              transition-all duration-200
+              ${isActive ? isActiveStyle : inactiveStyle}
+            `}
           >
             <Icon size={20} />
 

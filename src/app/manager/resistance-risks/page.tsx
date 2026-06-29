@@ -3,13 +3,13 @@
 import { useState, useMemo } from "react"
 import { Plus, Filter, Download } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useResistanceRisks } from "@/src/hooks/queries/use-resistance-risks"
-import { useDiseases } from "@/src/hooks/queries/use-diseases"
-import { ResistanceRiskTable } from "./_components/resistance-risk-table"
-import { ResistanceRiskFormDialog } from "./_components/resistance-risk-form-dialog"
-import { DeleteResistanceRiskDialog } from "./_components/delete-resistance-risk-dialog"
-import { PaginationSection } from "@/src/components/layout/pagination"
-import { ResistanceRisk } from "@/src/types/resistance-risk.type"
+import { useResistanceRisks } from "@/src/features/manager/resistance-risks/api"
+import { useDiseases } from "@/src/features/manager/diseases/api"
+import { ResistanceRiskTable } from "@/src/features/manager/resistance-risks/components/resistance-risk-table"
+import { ResistanceRiskFormDialog } from "@/src/features/manager/resistance-risks/components/resistance-risk-form-dialog"
+import { DeleteResistanceRiskDialog } from "@/src/features/manager/resistance-risks/components/delete-resistance-risk-dialog"
+import { PaginationSection } from "@/src/features/manager/layouts/pagination"
+import { ResistanceRisk } from "@/src/features/manager/resistance-risks/types"
 
 export default function ResistanceRisksPage() {
   const [page, setPage] = useState(1)

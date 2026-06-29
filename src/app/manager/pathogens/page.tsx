@@ -3,11 +3,11 @@
 import { useState } from "react"
 import { Plus, Filter, Download, Bug } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { usePathogens } from "@/src/hooks/queries/use-pathogens"
-import { PathogenTable } from "./_components/pathogen-table"
-import { PathogenFormDialog } from "./_components/pathogen-form-dialog"
-import { DeletePathogenDialog } from "./_components/delete-pathogen-dialog"
-import { PaginationSection } from "@/src/components/layout/pagination"
+import { usePathogens } from "@/src/features/manager/pathogens/api"
+import { PathogenTable } from "@/src/features/manager/pathogens/components/pathogen-table"
+import { PathogenFormDialog } from "@/src/features/manager/pathogens/components/pathogen-form-dialog"
+import { DeletePathogenDialog } from "@/src/features/manager/pathogens/components/delete-pathogen-dialog"
+import { PaginationSection } from "@/src/features/manager/layouts/pagination"
 
 export default function PathogensPage() {
   const [page, setPage] = useState(1)
@@ -21,7 +21,7 @@ export default function PathogensPage() {
   if (isError || !data) return <div className="p-8 text-red-500">Lỗi kết nối API!</div>
 
   return (
-    <main className="space-y-6 max-w-300 mx-auto">
+    <main className="space-y-6 p-8 max-w-300 mx-auto">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-primary mb-2">Quản lý Tác nhân</h1>

@@ -10,14 +10,13 @@ import {
 
 import { Button } from "@/src/components/ui/button"
 
-import { Antibiotic } from "@/src/types/antibiotic.type"
-import { StatisticsCards } from "./_components/statistic-cards"
-import { AntibioticTable } from "./_components/antibiotic-table"
-import { PaginationSection } from "@/src/components/layout/pagination"
+import { Antibiotic } from "@/src/features/manager/antibiotics/types"
+import { AntibioticTable } from "@/src/features/manager/antibiotics/components/antibiotic-table"
+import { PaginationSection } from "@/src/features/manager/layouts/pagination"
 
-import { useAntibiotics } from "@/src/hooks/queries/use-antibiotic"
-import { AntibioticFormDialog } from "./_components/antibiotic-form-dialog"
-import { DeleteAntibioticDialog } from "./_components/delete-antibiotic-dialog"
+import { useAntibiotics } from "@/src/features/manager/antibiotics/api"
+import { AntibioticFormDialog } from "@/src/features/manager/antibiotics/components/antibiotic-form-dialog"
+import { DeleteAntibioticDialog } from "@/src/features/manager/antibiotics/components/delete-antibiotic-dialog"
 
 export default function AntibioticsPage() {
   const [page, setPage] = useState(1)
@@ -88,7 +87,7 @@ export default function AntibioticsPage() {
   }
 
   return (
-    <main className="space-y-6 p-8 space-y-6 max-w-[1200px] mx-auto">
+    <main className="space-y-6 p-8 max-w-300 mx-auto">
       {/* Hero */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
@@ -107,9 +106,6 @@ export default function AntibioticsPage() {
           Thêm kháng sinh
         </Button>
       </div>
-
-      {/* Stats */}
-      <StatisticsCards metadata={data.metadata} />
 
       {/* Table */}
       <section className="overflow-hidden rounded-xl border bg-white shadow-sm">

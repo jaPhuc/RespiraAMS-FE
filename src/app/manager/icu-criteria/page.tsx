@@ -1,12 +1,12 @@
 "use client"
 import { useState } from "react"
-import { Plus, Filter, Download, ActivitySquare } from "lucide-react"
+import { Plus, Filter, Download } from "lucide-react"
 import { Button } from "@/src/components/ui/button"
-import { useIcuCriteria } from "@/src/hooks/queries/use-icu-criteria"
-import { IcuCriterionTable } from "./_components/icu-criterion-table"
-import { PaginationSection } from "@/src/components/layout/pagination" // Tái sử dụng pagination component cũ
-import { DeleteIcuCriterionDialog } from "./_components/delete-icu-criterion-dialog"
-import { IcuCriterionFormDialog } from "./_components/icu-criterion-form-dialog"
+import { useIcuCriteria } from "@/src/features/manager/icu-criteria/api"
+import { IcuCriterionTable } from "@/src/features/manager/icu-criteria/components/icu-criterion-table"
+import { PaginationSection } from "@/src/features/manager/layouts/pagination"
+import { DeleteIcuCriterionDialog } from "@/src/features/manager/icu-criteria/components/delete-icu-criterion-dialog"
+import { IcuCriterionFormDialog } from "@/src/features/manager/icu-criteria/components/icu-criterion-form-dialog"
 
 export default function IcuCriteriaPage() {
   const [page, setPage] = useState(1)
@@ -19,7 +19,7 @@ export default function IcuCriteriaPage() {
   if (isError || !data) return <div className="p-8 text-red-500 font-medium">Lỗi kết nối API!</div>
 
   return (
-    <main className="p-8 space-y-6 max-w-[1200px] mx-auto">
+    <main className="p-8 space-y-6 max-w-300 mx-auto">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-primary mb-2">Tiêu chuẩn ICU</h1>
@@ -30,21 +30,9 @@ export default function IcuCriteriaPage() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="rounded-xl border bg-white p-5 shadow-sm">
-          <div className="flex items-center justify-between mb-2">
-            <div className="rounded-lg bg-amber-50 p-2 text-amber-600">
-              <ActivitySquare className="h-5 w-5" />
-            </div>
-          </div>
-          <h3 className="text-2xl font-bold text-amber-600">{data.metadata.totalItemCount}</h3>
-          <p className="text-sm text-gray-500 font-medium">Tổng tiêu chuẩn</p>
-        </div>
-      </div>
-
       <section className="overflow-hidden rounded-xl border bg-white shadow-sm">
         <div className="flex items-center justify-between border-b px-6 py-4">
-          <h3 className="text-lg font-semibold text-gray-800 text-primary">Danh sách tiêu chuẩn</h3>
+          <h3 className="text-lg font-semibold text-primary">Danh sách tiêu chuẩn</h3>
           <div className="flex gap-2">
             <Button size="icon" variant="ghost"><Filter className="h-4 w-4" /></Button>
             <Button size="icon" variant="ghost"><Download className="h-4 w-4" /></Button>

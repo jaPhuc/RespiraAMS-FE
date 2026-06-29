@@ -5,8 +5,8 @@ import "@/src/app/globals.css"
 import { cn } from "@/src/lib/utils";
 import QueryProvider from "@/src/providers/query-provider"
 
-import { SidebarShell } from "@/src/components/layout/sidebar-shell"
-import { DashboardHeader } from "@/src/components/layout/dashboard-header"
+import { SidebarShell } from "@/src/features/manager/layouts/sidebar-shell"
+import { DashboardHeader } from "@/src/features/manager/layouts/dashboard-header"
 
 const inter = Inter({subsets:['latin'],variable:'--font-sans'})
 

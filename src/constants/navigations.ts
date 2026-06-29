@@ -9,7 +9,8 @@ import {
   ClipboardPlus,
   Tablets,
   ShieldPlus,
-  BriefcaseMedical
+  BriefcaseMedical,
+  Hospital,
 } from "lucide-react"
 
 export const NAVIGATION_ITEMS = [
@@ -36,7 +37,7 @@ export const NAVIGATION_ITEMS = [
   {
     label: "Tiêu chí ICU",
     href: "/manager/icu-criteria",
-    icon: ClipboardPlus,
+    icon: Hospital,
   },
   {
     label: "Kháng sinh",
